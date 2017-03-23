@@ -26,7 +26,7 @@ public class ClientServer {
 
     private static final Logger logger = LoggerFactory.getLogger(ClientServer.class);
 
-    @Value("${netty.port:9090}")
+    @Value("${netty.port:8080}")
     private int port;
 
     @Autowired

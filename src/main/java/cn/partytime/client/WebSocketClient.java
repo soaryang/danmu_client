@@ -52,7 +52,7 @@ import java.net.URI;
  */
 public final class WebSocketClient {
 
-    static final String URL = System.getProperty("url", "ws://192.168.1.147:8080/ws");
+    static final String URL = System.getProperty("url", "ws://localhost:8080/ws");
 
     public static void main(String[] args) throws Exception {
         URI uri = new URI(URL);
