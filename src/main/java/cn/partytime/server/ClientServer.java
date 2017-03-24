@@ -1,5 +1,6 @@
 package cn.partytime.server;
 
+import cn.partytime.server.clienthandler.ClientServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
@@ -9,12 +10,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 
 /**
@@ -26,14 +22,11 @@ public class ClientServer {
 
     private static final Logger logger = LoggerFactory.getLogger(ClientServer.class);
 
-    @Value("${netty.port:8080}")
-    private int port;
-
     @Autowired
     private ClientServerInitializer danmuServerInitializer;
 
-    public  void nettyStart() {
-        logger.info("netty服务启动!");
+    public  void nettyStart(int port) {
+        logger.info("ClientSver启动!");
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {

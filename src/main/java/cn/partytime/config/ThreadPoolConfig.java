@@ -1,5 +1,9 @@
 package cn.partytime.config;
 
+import com.sun.org.apache.regexp.internal.RE;
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -11,6 +15,16 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configuration
 public class ThreadPoolConfig {
 
+
+    @Bean(name = "clientBootstrap")
+    public Bootstrap initClientBootstrap(){
+        return  new Bootstrap();
+    }
+
+    @Bean(name = "clientEventLoopGroup")
+    public EventLoopGroup intClientEventLoopGroup(){
+        return new NioEventLoopGroup();
+    }
 
     @Bean(name = "threadPoolTaskExecutor")
     public ThreadPoolTaskExecutor initThreadPoolTaskExecutor() {

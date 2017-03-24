@@ -1,4 +1,4 @@
-package cn.partytime.server;
+package cn.partytime.server.clienthandler;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.http.*;
@@ -10,15 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
 
 import static io.netty.handler.codec.http.HttpHeaderNames.HOST;
-import static io.netty.handler.codec.http.HttpResponseStatus.NOT_FOUND;
 import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
-import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 /**
  * Created by lENOVO on 2016/12/6.
