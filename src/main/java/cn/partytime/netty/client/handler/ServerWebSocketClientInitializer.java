@@ -1,4 +1,4 @@
-package cn.partytime.client.handler;
+package cn.partytime.netty.client.handler;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

@@ -1,10 +1,10 @@
 package cn.partytime.init;
 
-import cn.partytime.client.ServerWebSocketClient;
+import cn.partytime.netty.client.ServerWebSocketClient;
 import cn.partytime.model.Properties;
 import cn.partytime.service.RsyncFileService;
-import cn.partytime.server.ClientServer;
-import cn.partytime.server.TmsServer;
+import cn.partytime.netty.server.ClientServer;
+import cn.partytime.netty.server.TmsServer;
 import cn.partytime.service.WindowShellService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

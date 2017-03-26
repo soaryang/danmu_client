@@ -1,6 +1,6 @@
-package cn.partytime.client.listener;
+package cn.partytime.netty.client.listener;
 
-import cn.partytime.client.ServerWebSocketClient;
+import cn.partytime.netty.client.ServerWebSocketClient;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;

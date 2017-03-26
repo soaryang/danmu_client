@@ -1,7 +1,7 @@
-package cn.partytime.server;
+package cn.partytime.netty.server;
 
-import cn.partytime.server.tmsHandler.TmsServerHandler;
-import cn.partytime.server.tmsHandler.TmsServerInitializer;
+import cn.partytime.netty.server.tmsHandler.TmsServerHandler;
+import cn.partytime.netty.server.tmsHandler.TmsServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

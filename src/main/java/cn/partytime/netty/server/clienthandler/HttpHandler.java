@@ -1,4 +1,4 @@
-package cn.partytime.server.clienthandler;
+package cn.partytime.netty.server.clienthandler;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.http.*;

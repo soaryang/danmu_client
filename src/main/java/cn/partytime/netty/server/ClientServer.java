@@ -1,6 +1,6 @@
-package cn.partytime.server;
+package cn.partytime.netty.server;
 
-import cn.partytime.server.clienthandler.ClientServerInitializer;
+import cn.partytime.netty.server.clienthandler.ClientServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;

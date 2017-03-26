@@ -1,4 +1,4 @@
-package cn.partytime.server.tmsHandler;
+package cn.partytime.netty.server.tmsHandler;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

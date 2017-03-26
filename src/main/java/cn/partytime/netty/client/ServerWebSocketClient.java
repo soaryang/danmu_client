@@ -13,29 +13,16 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package cn.partytime.client;
+package cn.partytime.netty.client;
 
-import cn.partytime.client.handler.ServerWebSocketClientInitializer;
+import cn.partytime.netty.client.handler.ServerWebSocketClientInitializer;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.http.DefaultHttpHeaders;
-import io.netty.handler.codec.http.HttpClientCodec;
-import io.netty.handler.codec.http.HttpObjectAggregator;
-import io.netty.handler.codec.http.websocketx.*;
-import io.netty.handler.codec.http.websocketx.extensions.compression.WebSocketClientCompressionHandler;
-import io.netty.handler.ssl.SslContext;
-import io.netty.handler.ssl.SslContextBuilder;
-import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.net.ssl.SSLException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 
