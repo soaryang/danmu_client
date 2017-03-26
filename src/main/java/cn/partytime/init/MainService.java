@@ -1,8 +1,11 @@
 package cn.partytime.init;
 
 import cn.partytime.client.ServerWebSocketClient;
+import cn.partytime.model.Properties;
+import cn.partytime.resource.downloadfile.RsyncFileService;
 import cn.partytime.server.ClientServer;
 import cn.partytime.server.TmsServer;
+import cn.partytime.service.WindowShellService;
 import org.omg.CORBA.PRIVATE_MEMBER;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +30,9 @@ public class MainService {
     private int port;
 
     @Autowired
+    private Properties properties;
+
+    @Autowired
     private ClientServer clientServer;
 
     @Autowired
@@ -35,9 +41,15 @@ public class MainService {
     @Autowired
     private ServerWebSocketClient serverWebSocketClient;
 
+    @Autowired
+    private RsyncFileService rsyncFileService;
+
 
     @Resource(name = "threadPoolTaskExecutor")
     private ThreadPoolTaskExecutor threadPoolTaskExecutor;
+
+    @Autowired
+    private WindowShellService windowShellService;
 
     /**
      * 启动系统加载项目
@@ -52,6 +64,24 @@ public class MainService {
         //TODO:启动client2连接Javaclient
 
         //TODO:加载本地资源
+        initResource();
+    }
+
+
+    private void initResource(){
+        threadPoolTaskExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(properties.getIfDownload()==0) {
+                    rsyncFileService.rsyncFile();
+                    rsyncFileService.downloadClient();
+                    //下载执行脚本
+                    rsyncFileService.downloadExecuteShell();
+                }
+                rsyncFileService.createFlashConfig();
+                windowShellService.restartTask();
+            }
+        });
     }
 
     /**
