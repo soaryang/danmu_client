@@ -2,11 +2,10 @@ package cn.partytime.init;
 
 import cn.partytime.client.ServerWebSocketClient;
 import cn.partytime.model.Properties;
-import cn.partytime.resource.downloadfile.RsyncFileService;
+import cn.partytime.service.RsyncFileService;
 import cn.partytime.server.ClientServer;
 import cn.partytime.server.TmsServer;
 import cn.partytime.service.WindowShellService;
-import org.omg.CORBA.PRIVATE_MEMBER;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

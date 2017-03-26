@@ -4,7 +4,7 @@ package cn.partytime.scheduler;
 import cn.partytime.model.VersionConfig;
 import cn.partytime.model.VersionInfo;
 
-import cn.partytime.resource.downloadfile.RsyncFileService;
+import cn.partytime.service.RsyncFileService;
 import cn.partytime.service.ClientUpdateService;
 import cn.partytime.util.ListUtils;
 import lombok.extern.slf4j.Slf4j;

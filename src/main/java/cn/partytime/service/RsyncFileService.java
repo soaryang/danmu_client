@@ -1,4 +1,4 @@
-package cn.partytime.resource.downloadfile;
+package cn.partytime.service;
 
 import cn.partytime.config.ConfigUtils;
 import cn.partytime.json.*;
